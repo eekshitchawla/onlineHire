@@ -1,0 +1,65 @@
+#candidatePage{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 10vh;
+    padding-top: 20vh;
+    background-color: #D67229;
+}
+ 
+#meals{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-evenly;
+}
+.meal {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 40px;
+    padding: 20px;
+    font-size: 1.3rem;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    border: 2px solid white;
+    border-radius: 20px;
+}
+#addToList, #dropDownMeal{
+    border-radius: 10px;
+    background: #ff914d;
+    border: none;
+    padding: 5px;
+    font-weight: 500;
+    width: fit-content;
+    text-align: center;
+    color: white;
+    margin-top: 10px;
+}
+#addToList{
+    margin-top: 0px;
+    margin-left: 20px;
+    padding: 10px 10px;
+    font-weight: 600;
+} 
+
+#searchBar{
+    padding: 5vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#inp{
+    padding: 2vh;
+    border: none;
+    outline: none;
+    border-radius: 10px;
+}
+
+@media screen and (max-width:768px) {
+    #candidatePage{
+        padding-top: 30vh;
+    }
+}

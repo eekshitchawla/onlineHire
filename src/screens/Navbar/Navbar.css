@@ -1,0 +1,75 @@
+#navBar {
+  background-color: #fff;
+  color: #000;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 20px;
+  box-shadow: 0px 5px 5px rgba(0,0,0,0.3);
+}
+
+#container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#appName {
+  font-size: 24px;
+  font-weight: bold;
+  color: #000;
+  border: none;
+  background-color: transparent;
+}
+
+#list, #navbarLinks {
+  display: flex;
+  flex-wrap: wrap;
+  font-size: 16px;
+  list-style-type: none;
+
+}
+
+#cartBtn {
+  font-size: 16px;
+  font-weight: bold;
+  background-color: orange;
+  color: #fff;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  border-radius: 20px;
+  margin-right: 50px;
+}
+
+#itemBtn {
+  font-size: 18px;
+  font-weight: bold;
+  background-color: transparent;
+  border: none;
+  color: #000;
+  cursor: pointer;
+}
+
+#itemBtn:hover {
+  text-decoration: underline;
+}
+
+@media screen and (max-width: 768px) {
+
+  #navbarLinks, #navBar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  #list {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+}

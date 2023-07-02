@@ -1,0 +1,33 @@
+#footer{
+    background-color: black;
+    height: auto;
+    width: 100%;
+    padding-bottom: 50px;
+}
+
+#secondHalf, #firstHalf{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    padding-top: 20px;
+}
+
+#footerPic{
+    padding-top: 10px;
+    height: 15rem;
+    width: 18rem;
+}
+
+#slogan{
+    color: white;
+    font-size: 5rem;
+    font-weight: 600;
+    /* display: flex;
+    align-items: center; */
+    /* align-self: center; */
+}
+
+#connect{
+    color: white;
+}
+

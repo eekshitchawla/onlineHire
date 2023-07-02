@@ -1,0 +1,36 @@
+
+#mainBodyContent{
+    height: 80vh;
+    padding: 15vh;
+    background-color:#FF6347;
+    color: white;
+    text-align: justify;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: start;
+    background-image: url('../../assets/studymonk.png');
+    background-position:bottom;
+    background-repeat: no-repeat;
+}
+#featureContent{
+    height: 80vh;
+    padding: 15vh;
+    background-color: #f7b42c;
+    background-image: linear-gradient(315deg, #f7b42c 0%, #fc575e 74%);
+    color: white;
+    text-align: justify;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+
+@media screen and (max-width:768px) {
+   #mainBodyContent, #featureContent{
+        width: 100%;
+        height: auto;
+    }
+}
