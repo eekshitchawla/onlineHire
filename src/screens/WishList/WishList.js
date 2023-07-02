@@ -25,7 +25,6 @@ const WishList = () => {
 
     const handleDelete = async (meal) => {
         const email = await localStorage.getItem('email')
-        // console.log(email)
         const user = await getDoc(doc(db, "users", email));
         if (user.exists()) {
             alert('Candidate Removed')

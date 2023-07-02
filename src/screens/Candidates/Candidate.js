@@ -67,25 +67,37 @@ const Candidate = () => {
     const [val, setVal] = useState('')
     const [found, setFound] = useState(false)
     const search = () => {
-        // console.log(val)
+        // for (let meal = 0; meal < meals.length; meal++) {
+        //     if (meals[meal].name === val) {
+        //         alert("Candidate Exists!")
+        //         setFound(true)
+        //         return;
+        //     }
+        //     if (meals[meal].skill === val) {
+        //         alert("SkillSet Exists!")
+        //         setFound(true)
+        //         return;
+        //     }
+        // }
+
         for (let meal = 0; meal < meals.length; meal++) {
-            if (meals[meal].name === val) {
-                alert("Candidate Exists!")
+            if (meals[meal].name.includes(val)) {
+                alert(`Candidate Exists! Candidate No, ${meal + 1}`)
                 setFound(true)
             }
-            if (meals[meal].skill === val) {
-                alert("SkillSet Exists!")
+            if (meals[meal].skill.includes(val)) {
+                alert(`Related Skill Exists! Candidate No, ${meal + 1}`)
                 setFound(true)
             }
         }
-        if (found === false) alert('Not exists, Please type correctly')
-        setFound(false)
+        if (found) alert('Not exists, Please type correctly')
+
     }
 
     return <>
         <div id="candidatePage">
             <div id="searchBar">
-                <input id="inp" type="text" name="" onChange={(e) => setVal(e.target.value)} />
+                <input id="inp" type="text" placeholder="Case-Sensitive" onChange={(e) => setVal(e.target.value)} />
                 <button id="addToList" onClick={() => search()}>Search</button>
 
             </div>
@@ -93,8 +105,8 @@ const Candidate = () => {
                 {meals.map((meal) => (
                     <div className="meal" id={`meal-${meal.id}`} key={`meal-${meal.id}`}>
                         <img id="mealBoxPic" src={mealBox} alt="" />
-                        <h3 id="mealName">{meal.name}</h3>
-                        <div id="mealName">({meal.skill})</div>
+                        <div id="mealName">{meal.name}</div>
+                        <div id="mealSkill">{meal.skill}</div>
                         <button id="addToList" onClick={() => handleWatchList(meal)}>Add to WatchList</button>
                     </div>
                 ))}

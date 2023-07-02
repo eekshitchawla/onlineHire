@@ -21,7 +21,6 @@
     flex-direction: column;
     margin-bottom: 40px;
     padding: 20px;
-    font-size: 1.3rem;
     align-items: center;
     justify-content: center;
     color: white;
@@ -30,6 +29,21 @@
     background-color: #ffffff9c;
     color: black;
 }
+
+#mealName{
+    font-size: 22px;
+    font-weight: 700;
+    padding-top: 20px;
+}
+
+#mealSkill{
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    padding-bottom: 20px;
+}
+
+
 #addToList, #dropDownMeal{
     border-radius: 10px;
     background: #ff914d;

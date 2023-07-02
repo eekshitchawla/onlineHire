@@ -25,13 +25,13 @@ background-image: linear-gradient(315deg, #ee8e6b 0%, #ef6da0 74%);
 }
 #deleteCartItem{
     font-size: 16px;
-  font-weight: bold;
-  background-color: orange;
-  color: #fff;
-  border: none;
-  padding: 10px;
-  cursor: pointer;
-  border-radius: 20px;
+    font-weight: bold;
+    background-color: orange;
+    color: #fff;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 20px;
 }
 #nameCart, #priceCart{
     margin: 3vh;
