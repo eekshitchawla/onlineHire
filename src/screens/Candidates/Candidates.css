@@ -65,4 +65,7 @@
     #candidatePage{
         padding-top: 30vh;
     }
+    .meal{
+        width: 80%;
+    }
 }

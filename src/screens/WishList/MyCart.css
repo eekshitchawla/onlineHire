@@ -47,3 +47,9 @@ background-image: linear-gradient(315deg, #ee8e6b 0%, #ef6da0 74%);
     height: 50vh;
     width: 100%;
 }
+
+@media screen and (max-width:768px) {
+    #cartCard{
+        width: 95%;
+    }
+}
