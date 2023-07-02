@@ -70,15 +70,16 @@ const Candidate = () => {
         // console.log(val)
         for (let meal = 0; meal < meals.length; meal++) {
             if (meals[meal].name === val) {
-                alert("itis")
+                alert("Candidate Exists!")
                 setFound(true)
             }
             if (meals[meal].skill === val) {
-                alert("itis")
+                alert("SkillSet Exists!")
                 setFound(true)
             }
         }
-        if (!found) alert('Not exists, Please type correctly')
+        if (found === false) alert('Not exists, Please type correctly')
+        setFound(false)
     }
 
     return <>

@@ -1,6 +1,7 @@
 import { doc, getDoc, getFirestore, setDoc } from "firebase/firestore";
 import React, { useEffect, useState } from "react";
 import photo from '../../assets/avatar.png'
+import consult from '../../assets/consult.png'
 
 import './MyCart.css'
 import { initializeApp } from "firebase/app";
@@ -56,8 +57,16 @@ const WishList = () => {
         }
         init();
     }, [])
+
     return (
         <div id="addCartPage">
+            {cartItems.length === 0 && (
+                <div id="noCandi">
+                    <img id="imgConsult" src={consult} alt="No Candidate" />
+                    <h2>No candidates available.</h2>
+                    <button id="deleteCartItem" onClick={() => window.location.href = '/candidates'}> Go to Candidates Page</button>
+                </div>
+            )}
             {
                 cartItems?.map((cartItem) => {
                     return (<div id="cartCard" key={cartItem?.id}>

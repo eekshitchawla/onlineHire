@@ -17,6 +17,7 @@
 }
 .meal {
     display: flex;
+    width: 20%;
     flex-direction: column;
     margin-bottom: 40px;
     padding: 20px;
@@ -26,6 +27,8 @@
     color: white;
     border: 2px solid white;
     border-radius: 20px;
+    background-color: #ffffff9c;
+    color: black;
 }
 #addToList, #dropDownMeal{
     border-radius: 10px;
@@ -52,7 +55,7 @@
     justify-content: center;
 }
 #inp{
-    padding: 2vh;
+    padding: 5%;
     border: none;
     outline: none;
     border-radius: 10px;
