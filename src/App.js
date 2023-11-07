@@ -8,7 +8,6 @@ import WishList from "./screens/WishList/WishList.js";
 import Candidate from "./screens/Candidates/Candidate.js";
 
 const App = () => {
-
   const router = createBrowserRouter([
     {
       path: "/",
@@ -28,14 +27,13 @@ const App = () => {
     },
     {
       path: "/candidates",
-      element: <Candidate />
+      element: <Candidate />,
     },
   ]);
   return (
     <div>
       <Navbar />
       <RouterProvider router={router} />
-      {/* <Footer /> */}
     </div>
   );
 };

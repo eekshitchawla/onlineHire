@@ -1,68 +1,73 @@
-   #logo {
-    font-size: 24px;
-    font-weight: bold;
-  }
-  
-  #loginPage {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: calc(100vh - 120px); 
-    background-color: #ee8e6b;
-    background-image: linear-gradient(315deg, #ee8e6b 0%, #ef6da0 74%);
-  }
+#logo {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+#loginPage {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #ee8e6b;
+  background-image: linear-gradient(315deg, #ee8e6b 0%, #ef6da0 74%);
+}
+#card {
+  width: 40%;
+  height: auto;
+  background-color: #ffffffdb;
+  border-radius: 30px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  padding: 4vh;
+  text-align: center;
+}
+
+#text {
+  font-weight: 500;
+  margin-top: 10px;
+}
+
+.fields,
+#email,
+#pass {
+  align-self: center;
+  width: 80%;
+  padding: 10px;
+  margin-top: 5px;
+  border-radius: 3px;
+  border: 3px solid orange;
+}
+
+#lower {
+  margin-top: 20px;
+  justify-content: center;
+}
+
+#logInBtn {
+  background-color: orange;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 10px;
+  margin: 2px;
+  cursor: pointer;
+}
+#signUpBtn {
+  background-color: #ffffffdb;
+  color: orange;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 10px;
+  margin: 2px;
+  cursor: pointer;
+}
+
+#loginText,
+#signUpText {
+  font-weight: bold;
+}
+@media screen and (max-width: 768px) {
   #card {
-    width: auto;
-    height: auto;
-    background-color: #ffffffdb;
-    border-radius: 30px;
-    box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
-    padding: 4vh;
-    text-align: center;
+    width: 90%;
   }
-  
-  #text {
-    font-weight: 500;
-    margin-top: 10px;
-  }
-  
-  #email,#pass{
-    align-self: center;
-    width: 80%;
-    padding: 10px;
-    margin-top: 5px;
-    border-radius: 3px;
-    border: 3px solid orange;
-  }
-  
-  #lower {
-    margin-top: 20px;
-    justify-content: center;
-  }
-  
-  #logInBtn{
-    background-color: orange;
-    color: #fff;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 10px;
-    margin: 2px;
-    cursor: pointer;
-  }
-  #signUpBtn{
-    background-color: #ffffffdb;
-    color: orange;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 10px;
-    margin: 2px;
-    cursor: pointer;
-  }
-  
-  #loginText,#signUpText {
-    font-weight: bold;
-  }
-  @media screen and (max-width:768px) {
-    
-  }
+}

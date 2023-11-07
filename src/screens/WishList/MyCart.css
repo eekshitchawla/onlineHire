@@ -1,55 +1,62 @@
-#addCartPage{
-    padding: 10vh;
-    padding-top: 20vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    /* background-color: #FDA172; */
-    background-color: #ee8e6b;
-background-image: linear-gradient(315deg, #ee8e6b 0%, #ef6da0 74%);
+#addCartPage {
+  padding: 10vh;
+  padding-top: 20vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  /* background-color: #FDA172; */
+  background-color: #0b65c2;
+  /* background-image: linear-gradient(315deg, #ee8e6b 0%, #ef6da0 74%); */
+}
+#cartCard {
+  padding: 3vh;
+  margin: 3vh;
+  border: 2px solid black;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: white;
+  width: 50vh;
+  height: 50vh;
+}
+#deleteCartItem {
+  font-size: 16px;
+  font-weight: bold;
+  background-color: #0b65c2;
+  color: #fff;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  border-radius: 20px;
+}
+#nameCart,
+#priceCart {
+  margin: 3vh;
+}
 
+#noCandi {
+  display: flex;
+  height: 70vh;
+  flex-direction: column;
+  padding-top: 10vh;
+  align-items: center;
+  justify-content: start;
+  color: white;
 }
-#cartCard{
-    padding: 3vh;
-    margin: 3vh;
-    border: 2px solid black;
-    border-radius: 20px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    background-color: #ffffff9c;
-    width: 50vh;
-    height: 50vh;
+
+#imgConsult {
+  height: 50vh;
+  width: 100%;
 }
-#deleteCartItem{
-    font-size: 16px;
-    font-weight: bold;
-    background-color: orange;
-    color: #fff;
+
+@media screen and (max-width: 768px) {
+  #cartCard {
+    width: 95vw;
+    padding: 1vh;
     border: none;
-    padding: 10px;
-    cursor: pointer;
-    border-radius: 20px;
-}
-#nameCart, #priceCart{
-    margin: 3vh;
-}
-
-#noCandi{
-    display: flex; flex-direction: column;
-    padding-top: 10vh;
-    align-items: center;justify-content: center;
-}
-
-#imgConsult{
-    height: 50vh;
-    width: 100%;
-}
-
-@media screen and (max-width:768px) {
-    #cartCard{
-        width: 95%;
-    }
+    border-radius: 0;
+  }
 }
