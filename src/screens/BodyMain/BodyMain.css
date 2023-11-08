@@ -1,5 +1,5 @@
 #mainBodyContent {
-  padding: 15vh;
+  padding: 10rem 0;
   background-color: #0b65c2;
   color: white;
   text-align: justify;
@@ -22,7 +22,7 @@
 }
 
 #featureContent {
-  padding: 15vh;
+  padding: 15vh 0;
   font-weight: 700;
   background-color: white;
   color: #0b65c2;
@@ -37,15 +37,13 @@
 @media screen and (max-width: 768px) {
   #mainBodyContent,
   #featureContent {
-    width: 100%;
+    /* width: 100%; */
     height: auto;
-    /* padding: 0; */
   }
   #mainBodyContent > p,
   #featureContent > ul {
-    width: 100vw;
     padding-left: 0;
-    flex-wrap: wrap;
+    width: 90vw;
   }
   #mainBodyContent {
     background-image: none;

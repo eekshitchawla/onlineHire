@@ -51,7 +51,7 @@ const Navbar = () => {
               window.location.href = "/";
             }}
           >
-            MY LINKEDIN
+            SKILL SELECT
           </button>
           <div className="nameRender" id="itemBtn">
             {username === "" ? "" : `Hey ${username} !`}

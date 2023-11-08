@@ -38,7 +38,11 @@ const Candidate = () => {
 
   const handleWatchList = async (meal) => {
     const email = localStorage.getItem("email");
-    console.log(meal.id);
+    if (email === null) {
+      alert("Please Sign In First!");
+      return;
+    }
+    // console.log(meal.id);
     const user = await getDoc(doc(db, "users", email));
     if (user.exists()) {
       const data = user.data();
@@ -64,20 +68,20 @@ const Candidate = () => {
   };
 
   const [val, setVal] = useState("");
-  const [found, setFound] = useState(false);
   const search = () => {
+    let found = false;
     if (val === "") {
       alert("Please enter a name/skill");
       return;
     }
     for (let meal = 0; meal < meals.length; meal++) {
-      if (meals[meal].name.toLowerCase().includes(val.toLowerCase())) {
+      if (meals[meal]?.name?.toLowerCase().includes(val?.toLowerCase())) {
         alert(`Candidate Exists! Candidate No, ${meal + 1}`);
-        setFound(true);
+        found = true;
       }
-      if (meals[meal].skill.toLowerCase().includes(val.toLowerCase())) {
+      if (meals[meal]?.skill?.toLowerCase().includes(val?.toLowerCase())) {
         alert(`Related Skill Exists! Candidate No, ${meal + 1}`);
-        setFound(true);
+        found = true;
       }
     }
     if (!found) alert("Not exists, Please type correctly");
@@ -98,7 +102,7 @@ const Candidate = () => {
           </button>
         </div>
         <div id="meals">
-          {meals.map((meal) => (
+          {meals?.map((meal) => (
             <div
               className="meal"
               id={`meal-${meal.id}`}

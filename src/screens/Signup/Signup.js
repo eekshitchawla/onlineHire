@@ -85,6 +85,7 @@ const Signup = () => {
   return (
     // JSX code for Signup component
     <div id="loginPage">
+      <h1>SIGNUP</h1>
       <form id="card">
         <div id="text">NAME</div>
         <input

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Navbar from "./screens/Navbar/Navbar.js";
 import BodyMain from "./screens/BodyMain/BodyMain.js";
@@ -30,10 +30,27 @@ const App = () => {
       element: <Candidate />,
     },
   ]);
+  const [onlineStatus, setOnlineStatus] = useState(true);
+
+  useEffect(() => {
+    window.addEventListener("offline", () => {
+      setOnlineStatus(false);
+    });
+    window.addEventListener("online", () => {
+      setOnlineStatus(true);
+    });
+  });
+
   return (
     <div>
-      <Navbar />
-      <RouterProvider router={router} />
+      {onlineStatus ? (
+        <>
+          <Navbar />
+          <RouterProvider router={router} />
+        </>
+      ) : (
+        <div>offline</div>
+      )}
     </div>
   );
 };

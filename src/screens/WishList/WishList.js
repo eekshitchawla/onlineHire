@@ -1,8 +1,6 @@
 import { doc, getDoc, getFirestore, setDoc } from "firebase/firestore";
 import React, { useEffect, useState } from "react";
 import photo from "../../assets/avatar.png";
-import consult from "../../assets/consult.png";
-
 import "./MyCart.css";
 import { initializeApp } from "firebase/app";
 
@@ -39,9 +37,9 @@ const WishList = () => {
     }
   };
   const [val, setVal] = useState("");
-  const [found, setFound] = useState(false);
+  // const [found, setFound] = useState(false);
   const search = () => {
-    setFound(false);
+    let found = false;
     if (val === "") {
       alert("Please enter a name/skill");
       return;
@@ -49,11 +47,11 @@ const WishList = () => {
     for (let meal = 0; meal < cartItems.length; meal++) {
       if (cartItems[meal].name.toLowerCase().includes(val.toLowerCase())) {
         alert(`Candidate Exists! Candidate No, ${meal + 1}`);
-        setFound(true);
+        found = true;
       }
       if (cartItems[meal].skill.toLowerCase().includes(val.toLowerCase())) {
         alert(`Related Skill Exists! Candidate No, ${meal + 1}`);
-        setFound(true);
+        found = true;
       }
     }
     if (!found) alert("Candidate not found");
@@ -78,6 +76,17 @@ const WishList = () => {
 
   return (
     <div id="addCartPage">
+      <div id="searchBar">
+        <input
+          id="inp"
+          type="text"
+          placeholder="type in candidate/skill"
+          onChange={(e) => setVal(e.target.value)}
+        />
+        <button id="addToList" onClick={() => search()}>
+          Search
+        </button>
+      </div>
       {cartItems.length === 0 && (
         <div id="noCandi">
           {/* <img id="imgConsult" src={consult} alt="No Candidate" /> */}
@@ -94,18 +103,6 @@ const WishList = () => {
       {cartItems?.map((cartItem) => {
         return (
           <>
-            <div id="searchBar">
-              <input
-                id="inp"
-                type="text"
-                placeholder="type in candidate/skill"
-                onChange={(e) => setVal(e.target.value)}
-              />
-              <button id="addToList" onClick={() => search()}>
-                Search
-              </button>
-            </div>
-
             <div id="cartCard" key={cartItem?.id}>
               <img src={photo} alt="" />
               <h1 id="nameCart">{cartItem?.name}</h1>

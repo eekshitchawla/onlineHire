@@ -6,18 +6,18 @@ const BodyMain = () => {
   return (
     <div id="mainBody">
       <div id="mainBodyContent">
-        <h1>WELCOME TO MY LINKEDIN</h1>
+        <h1>WELCOME TO SKILL SELECT</h1>
         <p style={{ fontSize: "20px" }}>
-          Welcome to MYLINKEDIN, your ultimate destination for online hiring! We
-          understand that finding the right talent or securing the perfect
+          Welcome to SKILL SELECT, your ultimate destination for online hiring!
+          We understand that finding the right talent or securing the perfect
           opportunity can be a challenging task. That's why we have created a
           platform that brings together job seekers and employers in a seamless
           and efficient manner. Whether you are a student looking for part-time
-          work or a professional seeking a new career path, studyMonk is here to
-          help you succeed. With our extensive database of job listings,
+          work or a professional seeking a new career path, SKILL SELECT is here
+          to help you succeed. With our extensive database of job listings,
           user-friendly interface, and powerful search tools, you can easily
           navigate through a vast array of opportunities and connect with
-          potential employers. Join my LINKEDIN today and embark on a journey
+          potential employers. Join SKILL SELECT today and embark on a journey
           towards your dream job!
         </p>
       </div>
