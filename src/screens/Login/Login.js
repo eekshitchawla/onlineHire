@@ -1,20 +1,9 @@
 import React, { useState } from "react";
-import { initializeApp } from "firebase/app";
-import { doc, getDoc, getFirestore } from "firebase/firestore";
+import { doc, getDoc } from "firebase/firestore";
 import "./Login.css";
+import { Firebase } from "../../utils/firebase";
 
-const firebaseConfig = {
-  apiKey: "AIzaSyDmktguxeaQZsf9ggqDT0T-UdoZkAoV8uo",
-  authDomain: "assignmentstudymonk.firebaseapp.com",
-  projectId: "assignmentstudymonk",
-  storageBucket: "assignmentstudymonk.appspot.com",
-  messagingSenderId: "1039980114016",
-  appId: "1:1039980114016:web:df01387e20dc21e49e1305",
-};
-
-// Initialize Firebase
-const app = initializeApp(firebaseConfig);
-const db = getFirestore(app);
+const db = Firebase();
 
 const Login = () => {
   const [email, setEmail] = useState("");

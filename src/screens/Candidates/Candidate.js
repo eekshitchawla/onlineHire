@@ -1,41 +1,26 @@
 import React, { useState } from "react";
 import "./Candidates.css";
-import { doc, getDoc, getFirestore, setDoc } from "firebase/firestore";
-import { initializeApp } from "firebase/app";
+import { addDoc, doc, getDoc, setDoc } from "firebase/firestore";
 import mealBox from "../../assets/avatar.png";
+import { Firebase } from "../../utils/firebase";
+import { candidates } from "../../utils/candidates";
 
 const Candidate = () => {
-  const firebaseConfig = {
-    apiKey: "AIzaSyDmktguxeaQZsf9ggqDT0T-UdoZkAoV8uo",
-    authDomain: "assignmentstudymonk.firebaseapp.com",
-    projectId: "assignmentstudymonk",
-    storageBucket: "assignmentstudymonk.appspot.com",
-    messagingSenderId: "1039980114016",
-    appId: "1:1039980114016:web:df01387e20dc21e49e1305",
-  };
+  const db = Firebase();
+  const meals = candidates;
 
-  // Initialize Firebase
-  const app = initializeApp(firebaseConfig);
-  const db = getFirestore(app);
-
-  const meals = [
-    { id: 1, name: "Aryan Kumar", skill: "Computer Engineer" },
-    { id: 2, name: "Bhavneet Singh", skill: "Software Engineer" },
-    { id: 3, name: "Chirag Kapoor", skill: "Blockchain Engineer" },
-    { id: 4, name: "Devansh Ahuja", skill: "Cloud Engineer" },
-    { id: 5, name: "Eekshit Chawla", skill: "Website Developer" },
-    { id: 6, name: "Fatima Sheikh", skill: "App Developer" },
-    { id: 7, name: "Garima Thareja", skill: "Devops Engineer" },
-    { id: 8, name: "Harvinder Kaur", skill: "Network Engineer" },
-    { id: 9, name: "Ishan Sethiya", skill: "Software Developer" },
-    { id: 10, name: "Jasmine Makkar", skill: "Advertising" },
-    { id: 11, name: "Kalpana Chawla", skill: "Manager" },
-    { id: 12, name: "Lalit Jain", skill: "HR Manager" },
-    { id: 13, name: "Muskan Jindal", skill: "SEO Engineer" },
-    { id: 14, name: "Naman Gupta", skill: "Advisor" },
-  ];
   const [entry, setEntry] = useState(true);
-
+  const data = {
+    stringExample: "Hello, World!",
+    booleanExample: true,
+    numberExample: 3.14159265,
+    arrayExample: [5, true, "hello"],
+    nullExample: null,
+    objectExample: {
+      a: 5,
+      b: true,
+    },
+  };
   const handleWatchList = async (meal) => {
     const email = localStorage.getItem("email");
     if (email === null) {

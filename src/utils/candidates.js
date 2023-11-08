@@ -1,0 +1,16 @@
+export const candidates = [
+  { id: 1, name: "Aryan Kumar", skill: "Computer Engineer" },
+  { id: 2, name: "Bhavneet Singh", skill: "Software Engineer" },
+  { id: 3, name: "Chirag Kapoor", skill: "Blockchain Engineer" },
+  { id: 4, name: "Devansh Ahuja", skill: "Cloud Engineer" },
+  { id: 5, name: "Eekshit Chawla", skill: "Website Developer" },
+  { id: 6, name: "Fatima Sheikh", skill: "App Developer" },
+  { id: 7, name: "Garima Thareja", skill: "Devops Engineer" },
+  { id: 8, name: "Harvinder Kaur", skill: "Network Engineer" },
+  { id: 9, name: "Ishan Sethiya", skill: "Software Developer" },
+  { id: 10, name: "Jasmine Makkar", skill: "Advertising" },
+  { id: 11, name: "Kalpana Chawla", skill: "Manager" },
+  { id: 12, name: "Lalit Jain", skill: "HR Manager" },
+  { id: 13, name: "Muskan Jindal", skill: "SEO Engineer" },
+  { id: 14, name: "Naman Gupta", skill: "Advisor" },
+];

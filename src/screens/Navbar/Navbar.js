@@ -1,34 +1,24 @@
 import React, { useEffect, useState } from "react";
 import "../Navbar/Navbar.css";
-import { initializeApp } from "firebase/app";
-import { doc, getDoc, getFirestore } from "firebase/firestore";
+import { doc, getDoc } from "firebase/firestore";
+import { Firebase } from "../../utils/firebase";
 
 const Navbar = () => {
   const [email, setEmail] = useState(localStorage.getItem("email"));
   const [username, setUsername] = useState("");
-  const firebaseConfig = {
-    apiKey: "AIzaSyDmktguxeaQZsf9ggqDT0T-UdoZkAoV8uo",
-    authDomain: "assignmentstudymonk.firebaseapp.com",
-    projectId: "assignmentstudymonk",
-    storageBucket: "assignmentstudymonk.appspot.com",
-    messagingSenderId: "1039980114016",
-    appId: "1:1039980114016:web:df01387e20dc21e49e1305",
-  };
+  const db = Firebase();
 
-  // Initialize Firebase
-  const app = initializeApp(firebaseConfig);
-  const db = getFirestore(app);
   useEffect(() => {
     const displayUser = async () => {
       if (email) {
         const docSnap = await getDoc(doc(db, "users", email));
         if (docSnap.exists()) {
-          setUsername(docSnap.data().name);
+          setUsername(docSnap.data().name.toUpperCase());
         }
       }
     };
     displayUser();
-  }, [email, db]);
+  }, [email, db, username]);
 
   const logout = () => {
     localStorage.clear();
@@ -54,7 +44,7 @@ const Navbar = () => {
             SKILL SELECT
           </button>
           <div className="nameRender" id="itemBtn">
-            {username === "" ? "" : `Hey ${username} !`}
+            {username === "" ? "" : `HEY ${username} !`}
           </div>
           <div id="navbarLinks">
             <ul id="list">

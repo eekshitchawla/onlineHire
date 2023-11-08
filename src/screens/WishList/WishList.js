@@ -1,24 +1,12 @@
-import { doc, getDoc, getFirestore, setDoc } from "firebase/firestore";
+import { doc, getDoc, setDoc } from "firebase/firestore";
 import React, { useEffect, useState } from "react";
 import photo from "../../assets/avatar.png";
 import "./MyCart.css";
-import { initializeApp } from "firebase/app";
+import { Firebase } from "../../utils/firebase";
 
 const WishList = () => {
-  const firebaseConfig = {
-    apiKey: "AIzaSyDmktguxeaQZsf9ggqDT0T-UdoZkAoV8uo",
-    authDomain: "assignmentstudymonk.firebaseapp.com",
-    projectId: "assignmentstudymonk",
-    storageBucket: "assignmentstudymonk.appspot.com",
-    messagingSenderId: "1039980114016",
-    appId: "1:1039980114016:web:df01387e20dc21e49e1305",
-  };
-
-  // Initialize Firebase
-  const app = initializeApp(firebaseConfig);
-  const db = getFirestore(app);
-
   const [cartItems, setCartItems] = useState([]);
+  const db = Firebase();
 
   const handleDelete = async (meal) => {
     const email = localStorage.getItem("email");
