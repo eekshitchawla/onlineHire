@@ -77,7 +77,7 @@ const WishList = () => {
       {filteredList?.length === 0 && (
         <div id="noCandi">
           {/* <img id="imgConsult" src={consult} alt="No Candidate" /> */}
-          <h2>No candidates available.</h2>
+          <div>No candidates available.</div>
           <button
             id="deleteCartItem"
             onClick={() => (window.location.href = "/candidates")}

@@ -14,31 +14,33 @@ const Candidate = () => {
 
   const handleWatchList = async (meal) => {
     const email = localStorage.getItem("email");
-    const user = await getDoc(doc(db, "users", email));
-    if (email === null) {
-      alert("Please Sign In First!");
-      return;
-    }
-    if (user.exists()) {
-      const data = user.data();
-      const existingList = data.watchList;
-      for (let i = 0; i < existingList.length; i++) {
-        if (meal.id === existingList[i].id) {
-          alert("Contestant Exists!");
-          setEntry(false);
-          return;
+    // Check for User
+    if (email) {
+      const user = await getDoc(doc(db, "users", email));
+      if (user.exists()) {
+        const data = user.data();
+        const existingList = data.watchList;
+        for (let i = 0; i < existingList.length; i++) {
+          if (meal.id === existingList[i].id) {
+            alert("Contestant Exists!");
+            setEntry(false);
+            return;
+          }
+        }
+        if (entry) {
+          alert("Candidate Listed!");
+          const temp = {
+            ...data,
+            watchList: [...data.watchList, meal],
+          };
+          await setDoc(doc(db, "users", email), {
+            ...temp,
+          });
         }
       }
-      if (entry) {
-        alert("Candidate Listed!");
-        const temp = {
-          ...data,
-          watchList: [...data.watchList, meal],
-        };
-        await setDoc(doc(db, "users", email), {
-          ...temp,
-        });
-      }
+    } else {
+      alert("Please Sign In!");
+      return;
     }
   };
 
