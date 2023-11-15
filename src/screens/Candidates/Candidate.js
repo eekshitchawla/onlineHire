@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "./Candidates.css";
-import { addDoc, doc, getDoc, setDoc } from "firebase/firestore";
+import { doc, getDoc, setDoc } from "firebase/firestore";
 import mealBox from "../../assets/avatar.png";
 import { Firebase } from "../../utils/firebase";
 import { candidates } from "../../utils/candidates";
@@ -8,27 +8,17 @@ import { candidates } from "../../utils/candidates";
 const Candidate = () => {
   const db = Firebase();
   const meals = candidates;
-
   const [entry, setEntry] = useState(true);
-  const data = {
-    stringExample: "Hello, World!",
-    booleanExample: true,
-    numberExample: 3.14159265,
-    arrayExample: [5, true, "hello"],
-    nullExample: null,
-    objectExample: {
-      a: 5,
-      b: true,
-    },
-  };
+  const [val, setVal] = useState("");
+  const [filteredList, setFilteredList] = useState(meals);
+
   const handleWatchList = async (meal) => {
     const email = localStorage.getItem("email");
+    const user = await getDoc(doc(db, "users", email));
     if (email === null) {
       alert("Please Sign In First!");
       return;
     }
-    // console.log(meal.id);
-    const user = await getDoc(doc(db, "users", email));
     if (user.exists()) {
       const data = user.data();
       const existingList = data.watchList;
@@ -52,42 +42,31 @@ const Candidate = () => {
     }
   };
 
-  const [val, setVal] = useState("");
-  const search = () => {
-    let found = false;
-    if (val === "") {
-      alert("Please enter a name/skill");
-      return;
-    }
-    for (let meal = 0; meal < meals.length; meal++) {
-      if (meals[meal]?.name?.toLowerCase().includes(val?.toLowerCase())) {
-        alert(`Candidate Exists! Candidate No, ${meal + 1}`);
-        found = true;
-      }
-      if (meals[meal]?.skill?.toLowerCase().includes(val?.toLowerCase())) {
-        alert(`Related Skill Exists! Candidate No, ${meal + 1}`);
-        found = true;
-      }
-    }
-    if (!found) alert("Not exists, Please type correctly");
-  };
-
   return (
     <>
       <div id="candidatePage">
-        <div id="searchBar">
+        <form id="searchBar">
           <input
             id="inp"
             type="text"
             placeholder="type in candidate"
             onChange={(e) => setVal(e.target.value)}
           />
-          <button id="addToList" onClick={() => search()}>
+          <button
+            id="addToList"
+            onClick={(e) => {
+              e.preventDefault();
+              const filtered = meals.filter((li) =>
+                li.name.toLowerCase().includes(val.toLowerCase())
+              );
+              setFilteredList(filtered);
+            }}
+          >
             Search
           </button>
-        </div>
+        </form>
         <div id="meals">
-          {meals?.map((meal) => (
+          {filteredList?.map((meal) => (
             <div
               className="meal"
               id={`meal-${meal.id}`}

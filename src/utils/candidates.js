@@ -3,7 +3,7 @@ export const candidates = [
   { id: 2, name: "Bhavneet Singh", skill: "Software Engineer" },
   { id: 3, name: "Chirag Kapoor", skill: "Blockchain Engineer" },
   { id: 4, name: "Devansh Ahuja", skill: "Cloud Engineer" },
-  { id: 5, name: "Eekshit Chawla", skill: "Website Developer" },
+  { id: 5, name: "Eekshit Chawla", skill: "All in One Developer" },
   { id: 6, name: "Fatima Sheikh", skill: "App Developer" },
   { id: 7, name: "Garima Thareja", skill: "Devops Engineer" },
   { id: 8, name: "Harvinder Kaur", skill: "Network Engineer" },
