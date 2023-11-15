@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import "../Navbar/Navbar.css";
 import { doc, getDoc } from "firebase/firestore";
 import { Firebase } from "../../utils/firebase";
-
+import logo from "../../assets/logo.png";
 const Navbar = () => {
   const [email, setEmail] = useState(localStorage.getItem("email"));
   const [username, setUsername] = useState("");
@@ -41,7 +41,7 @@ const Navbar = () => {
               window.location.href = "/";
             }}
           >
-            SKILL SELECT
+            <img src={logo} alt="" />
           </button>
           <div className="nameRender" id="itemBtn">
             {username === "" ? "" : `HEY ${username} !`}
