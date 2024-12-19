@@ -1,4 +1,4 @@
-.App {
+/* .App {
   text-align: center;
 }
 
@@ -34,5 +34,109 @@
   }
   to {
     transform: rotate(360deg);
+  }
+} */
+
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background: linear-gradient(135deg, #f0f8ff, #e6e9f0);
+  color: #333;
+  text-align: center;
+  line-height: 1.6;
+  min-height: 100vh;
+}
+
+/* App Container */
+.App {
+  text-align: center;
+}
+
+/* Logo Animation */
+.App-logo {
+  height: 30vmin;
+  animation: App-logo-spin infinite 15s linear;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Header Section */
+.App-header {
+  background: linear-gradient(145deg, #4a90e2, #0061f2);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.3);
+  padding: 20px;
+}
+
+.App-header h1 {
+  font-size: 3rem;
+  margin-bottom: 0.5rem;
+  letter-spacing: 2px;
+}
+
+.App-header p {
+  font-size: 1.2rem;
+  max-width: 600px;
+  margin-bottom: 1.5rem;
+}
+
+/* Links and Buttons */
+.App-link {
+  text-decoration: none;
+  color: #ffdf6c;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+.App-link:hover {
+  color: #ffb400;
+}
+
+/* Call to Action Button */
+.cta-btn {
+  background: #ffb400;
+  color: #fff;
+  border: none;
+  border-radius: 25px;
+  padding: 10px 20px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+}
+
+.cta-btn:hover {
+  background: #ffdf6c;
+  color: #333;
+  box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.25);
+  transform: translateY(-3px);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .App-header h1 {
+    font-size: 2.2rem;
+  }
+  .App-header p {
+    font-size: 1rem;
   }
 }

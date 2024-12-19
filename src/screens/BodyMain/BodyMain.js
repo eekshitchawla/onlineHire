@@ -49,6 +49,7 @@ const BodyMain = () => {
           </li>
         </ul>
       </div>
+      <div id="whiteBox"></div>
     </div>
   );
 };

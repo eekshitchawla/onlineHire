@@ -52,10 +52,20 @@ const Navbar = () => {
                 <button
                   id="itemBtn"
                   onClick={() => {
+                    window.location.href = "/myList";
+                  }}
+                >
+                  Shortlisted
+                </button>
+              </li>
+              <li id="item">
+                <button
+                  id="itemBtn"
+                  onClick={() => {
                     window.location.href = "/candidates";
                   }}
                 >
-                  Candidates
+                  All Candidates
                 </button>
               </li>
               <li id="item">
@@ -94,14 +104,6 @@ const Navbar = () => {
                 </li>
               )}
             </ul>
-            <button
-              id="cartBtn"
-              onClick={() => {
-                window.location.href = "/myList";
-              }}
-            >
-              Wishlist
-            </button>
           </div>
         </div>
       </nav>

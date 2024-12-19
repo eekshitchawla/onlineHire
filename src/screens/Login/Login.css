@@ -69,8 +69,22 @@
 #signUpText {
   font-weight: bold;
 }
+
+#whiteBoxLogin {
+  background-color: #0b65c2;
+  height: 130px;
+}
+
 @media screen and (max-width: 768px) {
   #card {
     width: 90%;
+    padding: 0;
+  }
+  #loginPage {
+    height: 95vh;
+  }
+  #whiteBoxLogin {
+    background-color: #0b65c2;
+    height: 150px;
   }
 }

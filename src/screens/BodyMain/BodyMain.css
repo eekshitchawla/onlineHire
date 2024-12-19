@@ -48,4 +48,8 @@
   #mainBodyContent {
     background-image: none;
   }
+  #whiteBox {
+    background-color: #0b65c2;
+    height: 130px;
+  }
 }

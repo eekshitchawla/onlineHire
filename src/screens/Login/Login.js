@@ -48,6 +48,7 @@ const Login = () => {
 
   return (
     <div id="loginPage">
+      <div id="whiteBoxLogin"></div>
       <h1>LOGIN</h1>
       <form id="card">
         <div id="text">E-MAIL</div>

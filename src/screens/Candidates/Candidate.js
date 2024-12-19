@@ -47,6 +47,7 @@ const Candidate = () => {
   return (
     <>
       <div id="candidatePage">
+        <div id="whiteBoxCandidate"></div>
         <form id="searchBar">
           <input
             id="inp"

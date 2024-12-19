@@ -50,6 +50,7 @@ const WishList = () => {
 
   return (
     <div id="addCartPage">
+      <div id="whiteBoxCandidate"></div>
       <form id="searchBar">
         <input
           id="inp"
