@@ -1,4 +1,4 @@
-#mainBodyContent {
+/* #mainBodyContent {
   padding: 10rem 0;
   background-color: #0b65c2;
   color: white;
@@ -37,7 +37,6 @@
 @media screen and (max-width: 768px) {
   #mainBodyContent,
   #featureContent {
-    /* width: 100%; */
     height: auto;
   }
   #mainBodyContent > p,
@@ -51,5 +50,73 @@
   #whiteBox {
     background-color: #0b65c2;
     height: 130px;
+  }
+} */
+#mainBody {
+  font-family: "Roboto", sans-serif;
+  margin: 0;
+  padding: 0;
+}
+#whiteBox {
+  background-color: #0b65c2;
+  height: 130px;
+}
+
+#mainBodyContent {
+  padding: 6rem 2rem;
+  background: linear-gradient(120deg, #0b65c2, #1d8ef1);
+  color: white;
+  text-align: center;
+}
+
+#mainBodyContent h1 {
+  font-size: 3rem;
+  margin-bottom: 1.5rem;
+}
+
+#mainBodyContent p {
+  font-size: 1.2rem;
+  line-height: 1.8;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+#featureContent {
+  padding: 4rem 2rem;
+  background-color: #f9f9f9;
+  color: #0b65c2;
+  text-align: center;
+}
+
+#featureContent h1 {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+}
+
+#featureContent ul {
+  list-style: none;
+  padding: 0;
+}
+
+#featureContent li {
+  font-size: 1.2rem;
+  line-height: 2;
+  margin: 1rem 0;
+}
+
+#featureContent li span {
+  font-size: 1.5rem;
+  margin-right: 0.5rem;
+}
+
+@media screen and (max-width: 768px) {
+  #mainBodyContent h1,
+  #featureContent h1 {
+    font-size: 2rem;
+  }
+
+  #mainBodyContent p,
+  #featureContent li {
+    font-size: 1rem;
   }
 }
